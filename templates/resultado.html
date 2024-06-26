@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo Flask</title>
+    <h4 class="marca">dato®</h4>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: auto;
+            margin: 0 auto;
+            max-width: calc(100% - 50px);
+        }
+        th {
+            text-align: center;
+            padding-left: 100px;
+            padding-right: 100px;
+            border-bottom: 1px solid  #ddd;
+        }
+        td {
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabela de resultados - Buslog</h1>
+    <div>
+        <a href='/'><button class="nova-consulta">Iniciar nova consulta</button></a>
+        <a href='/exportar_excel'><button class="exportar-excel">Exportar para Excel</button></a>
+    </div>
+    <table>
+        <tbody>
+            {{ table_html|safe }}
+        </tbody>
+    </table>
+</body>
+</html>

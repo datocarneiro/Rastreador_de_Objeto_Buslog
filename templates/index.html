@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Consulta de Rastreamento Amplo</title>
+    <h4 class="marca">dato®</h4>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+    <h1>Consultar Objeto - Buslog</h1>
+    <div class="paragrafo1">
+        <h4>Layout planilha base:</h4>
+        <p>✅ Cabeçalho e disposição das colunas devem ser idênticos.</p>
+        <p>✅ Coluna "C" deve conter só informações válidas na Latam cargo.</p>
+        <p>✅ Arquivo na extensão ".xlsx"</p>
+        <img class="img1" src="/static/layout.jpg" alt="Layout Planilha Base">
+    </div>
+    <div class="paragrafo2">
+        <img class="img2" src="/static/legenda.jpg" alt="Layout Planilha Base">
+    </div>
+    <div class="central">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file">Selecione o arquivo Excel:</label>
+            <input type="file" id="file" name="file" accept=".xlsx" required>
+            <br>
+            <input type="submit" value="Consultar Pendentes">
+            <a href='/resultado' class="botao-resultado">Iniciar Rastreamento</a>
+        </form>
+        
+    </div>
+    <div class="pendentes">
+        <h3>Pendentes "não entregue":</h3>
+        {% if pendentes %}
+            <p>(TOTAL: {{ total_pendentes }}) - {{ pendentes }}</p>
+        {% else %}
+            <p>Aguardando precessar pendentes...</p>
+        {% endif %}
+    </div>
+    </div>
+</body>
+
+</html>
